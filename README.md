@@ -1,7 +1,9 @@
 # Citations
 
+### Ajouter et supprimer vos 10 citations préférés !
+
 Projet d'exercice réalisé lors de la formation VueJs avec Udemy, hébérgé [ici](https://armand-salle.fr/citation) et codé par moi même.
-Le code du prof est [ici]() 
+Le code du prof est [ici](https://github.com/armandsalle/Citation/tree/master/CODE%20DU%20PROF) 
 
 ----
 
