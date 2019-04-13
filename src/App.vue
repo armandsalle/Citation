@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="container">
+      <app-loadbar></app-loadbar>
+      <app-addquote></app-addquote>
+      <app-quote></app-quote>
+      <footer v-if="hasQuotes" class="col-sm-12 col-md-12 col-lg-12">
+        <div class="alert alert-success">
+          <strong>Clicker</strong> sur une citation pour la supprimer.
+        </div>
+      </footer>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Quote from './components/Quote.vue'
+  import Loadbar from './components/Loadbar.vue'
+  import Addquote from './components/Addquote.vue'
+  import {eventBus} from './main.js'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+      created() {
+        eventBus.$on('quotesLength', data => {
+           if(data === 0){
+             this.hasQuotes = false
+           }else{
+             this.hasQuotes = true
+           }
+       })
+      },
+      data(){
+        return {
+          hasQuotes: false
+        }
+      },
+        components: {
+          appQuote: Quote,
+          appLoadbar: Loadbar,
+          appAddquote: Addquote
+        }
+    }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+footer{
+  margin-top: 20px;
 }
 </style>
