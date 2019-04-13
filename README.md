@@ -1,4 +1,9 @@
-# quotes
+# Citations
+
+Projet d'exercice réalisé lors de la formation VueJs avec Udemy, hébérgé [ici](https://armand-salle.fr/citation) et codé par moi même.
+Le code du prof est [ici]() 
+
+----
 
 ## Project setup
 ```
@@ -24,6 +29,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
